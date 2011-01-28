@@ -92,7 +92,7 @@ public class AndroidHTTPClient extends Activity {
 					JSONObject couchObject = new JSONObject();
 					couchObject.put("_id", sUuid);
 					couchObject.put("firstName","Larry");
-					couchObject.put("lastName","Witham");
+					couchObject.put("lastName","Test");
 					
 					DefaultHttpClient httpclient = new DefaultHttpClient();
 					HttpPost httppost = new HttpPost("http://thinkre.couchone.com/automath/");
