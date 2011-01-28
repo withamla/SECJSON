@@ -41,9 +41,8 @@ public class AndroidHTTPClient extends Activity {
 
 				final EditText edittext = (EditText) findViewById(R.id.entry);
 				TextView textView = (TextView) findViewById(R.id.outputTextView);
-				String url = URL;
-							RestClient client = new RestClient(
-						url);
+				String uuidurl = Keys.UUID_URL;
+							RestClient client = new RestClient(	uuidurl);
 				try {
 					client.Execute(RequestMethod.GET);
 				} catch (Exception e) {
@@ -87,10 +86,10 @@ public class AndroidHTTPClient extends Activity {
 					JSONObject couchObject = new JSONObject();
 					couchObject.put("_id", sUuid);
 					couchObject.put("firstName","Larry");
-					couchObject.put("lastName","Test");
-					String url = URL;
+					couchObject.put("lastName",edittext.getText().toString());
+					String posturl = Keys.DB_URL;
 					DefaultHttpClient httpclient = new DefaultHttpClient();
-					HttpPost httppost = new HttpPost(url);
+					HttpPost httppost = new HttpPost(posturl);
 					
 					StringEntity se;
 					try {
