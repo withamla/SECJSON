@@ -41,9 +41,9 @@ public class AndroidHTTPClient extends Activity {
 
 				final EditText edittext = (EditText) findViewById(R.id.entry);
 				TextView textView = (TextView) findViewById(R.id.outputTextView);
-
+				String url = URL;
 							RestClient client = new RestClient(
-						"http://thinkre.couchone.com/_uuids");
+						url);
 				try {
 					client.Execute(RequestMethod.GET);
 				} catch (Exception e) {
