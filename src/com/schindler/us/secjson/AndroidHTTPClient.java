@@ -42,12 +42,7 @@ public class AndroidHTTPClient extends Activity {
 				final EditText edittext = (EditText) findViewById(R.id.entry);
 				TextView textView = (TextView) findViewById(R.id.outputTextView);
 
-				// RestClient client = new
-				// RestClient("http://maps.google.com/maps/api/geocode/json?address=22+Holly+Hill+Drive,+New+Egypt,+NJ&sensor=true");
-				// RestClient client = new
-				// RestClient("http://136.238.20.51/sec/develop/larry/JSON.nsf/GetJSONContact?OPenAgent&key="
-				// + edittext.getText());
-				RestClient client = new RestClient(
+							RestClient client = new RestClient(
 						"http://thinkre.couchone.com/_uuids");
 				try {
 					client.Execute(RequestMethod.GET);
@@ -93,9 +88,9 @@ public class AndroidHTTPClient extends Activity {
 					couchObject.put("_id", sUuid);
 					couchObject.put("firstName","Larry");
 					couchObject.put("lastName","Test");
-					
+					String url = URL;
 					DefaultHttpClient httpclient = new DefaultHttpClient();
-					HttpPost httppost = new HttpPost("http://thinkre.couchone.com/automath/");
+					HttpPost httppost = new HttpPost(url);
 					
 					StringEntity se;
 					try {
